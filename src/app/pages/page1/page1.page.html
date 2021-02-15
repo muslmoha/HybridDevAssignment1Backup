@@ -1,0 +1,46 @@
+<style type="text/css">
+  table, th, td{
+    border: 1px solid black;
+    padding: 15px, 5px, 15px, 5px;
+    text-align: left;
+    background-color: blueviolet;
+    color:whitesmoke;
+  }
+</style>
+
+<ion-header>
+  <ion-toolbar>
+    <ion-button slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-button>
+    <ion-title>page1</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-provincial></app-provincial>
+  <ion-input [(ngModel)]='message' style="border: 2px solid black; width: 75%; align-self: center;"></ion-input>
+  <br>
+  <button (click)='setMessage()'>Set Message</button>
+  <br>
+  <br>
+  <div *ngIf="sharedService.vaccineData != null">
+    <table>
+      <tr>
+        <td><h5>Date:</h5></td> <td>{{data}}</td>
+      </tr>
+      <tr>
+        <td><h5>Previous Day Doses Administered:</h5></td> <td>{{prevDay}}</td>
+      </tr>
+      <tr>
+        <td><h5>Total doses administered:</h5></td> <td>{{totalDose}}</td>
+      </tr>
+      <tr>
+        <td><h5>Total doses in fully vaccinated individuals:</h5></td> <td>{{totalDoseVac}}</td>
+      </tr>
+      <tr>
+        <td><h5>Total individuals fully vaccinated:</h5></td> <td>{{totalpplVac}}</td>
+      </tr>
+    </table>
+  </div>
+</ion-content>
